@@ -1,0 +1,282 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\ul\b\f0\fs52\lang9 Ultimate guide to Ruby:\ulnone\b0\fs22\par
+\b\fs32 puts\b0  prints a new line vs \b print\par
+\b0 use\b  \\whatever \b0 to add it in quotes\b\par
+\\n \b0 puts in new line\par
+\b .upcase() \b0 and \b .downcase()\par
+.strip \b0 to get rid of white space\par
+\b .length()\par
+.include?\par
+.index()\par
+.to_s \b0 converts to string\par
+\b\fs44 tldr of Ruby on Rails:\b0\fs32\par
+-Creating the Rails Folder\par
+-Making Home/About/Header Pages\par
+          changing routes for pages \par
+          putting in links to a universal file for easy access to change\par
+-Adding Bootstrap to application\par
+         adding navbar\par
+        customizing what's in the navbar\par
+-Creating the database(friends list)\par
+         migrate database\par
+         adding it to navbar\par
+-Customizing Friends List\par
+        table bootstrap\par
+        button bootstrap\par
+-Creating/Customizing Alerts\par
+-Create Login with Devise\par
+        show certain pages when logged in/logged out\par
+        adding user id for each user signed up\par
+        associating each created friend w each user\par
+        restricting access to created friends list and editing features\par
+\par
+\ul\b\fs52 Ruby on Rails Guide:\par
+\ulnone\b0\fs28 -need to download Ruby first\par
+-check version of rails and ruby by typing:\par
+\tab ruby -v\par
+\tab rails -v\par
+-in command prompt:\par
+\tab -type "start . " to open directory \par
+\tab -type "dir" to show folders in directory on command prompt\par
+\tab -type "cd" to change directory within current directory\par
+\tab -type "cd .." to go back from current directory\par
+\tab -type "echo %cd%" to print directory\par
+\tab -press ctrl+shift+c to stop running server\par
+-type: rails new (whatever fold name you choose)\par
+\tab\b app\b0  folder is mainly where work is done\par
+\tab\b config\b0  is for customizing \par
+\tab\b gemfile\b0  has libraries \par
+\tab\b db\b0  is database\par
+\tab\b README\b0  explains how to use app\par
+\tab\b test \b0 is to test code\par
+-type:\par
+\b  cd (folder you named and created from typing "rails new (blah blah)")\b0 , then type "rails server" to open server\par
+type:\tab {{\field{\*\fldinst{HYPERLINK https://localhost:3000 }}{\fldrslt{https://localhost:3000\ul0\cf0}}}}\f0\fs28  to open server\par
+From other tutorial(ignore small text at bottom)\par
+\fs16 - make sure you have git, then check the version on command prompt by typing: \b git -v \par
+Tracking Changes of Files with Git:\b0\par
+-stay in directory of created rails file, then type: \b git init\b0 , to initialize git file\par
+-type: \b git status \b0 to show tracked/untracked files(git can track changes in file)\par
+-type: "git add -A" to add something, in this case, all folders of app to git\par
+-type:"git commit -m "whatever message" "\par
+-open the created app folder on sublime text editor\par
+-go in .gitignore and type: ".DS_Store" below #all logfiles and tempfiles,so it doesn't keep track \par
+-if accidentally delete folder, type: \b git checkout -f \b0 to undo it\par
+Easy way to rename:\par
+-on sublime text, press "ctrl + shift + f" to search anywhere for certain keywords\par
+\b Create New Repository on GitHub:\par
+\b0 -sign into account/create account and make a repository, name it\par
+-copy and paste:\par
+\tab git remote add origin {{\field{\*\fldinst{HYPERLINK https://github.com/ghorus/RailsApp.git }}{\fldrslt{https://github.com/ghorus/RailsApp.git\ul0\cf0}}}}\f0\fs16\par
+\tab git branch -M main\par
+\tab git push -u origin main\par
+to push repository within the directory of the app on command prompt, hit enter, then enter github username and password, all files created in app will now be on your github\par
+\fs28 ___________________________________________\par
+\b Create Home Page:\b0\par
+-go in app folder directory on command prompt, then type: \b rails generate controller pages home\par
+-\b0 type: localhost:3000/pages/home , this specific page is available in your app/app/views/\par
+go to config/locales/routes.rb to make the new page a home page(so that the page will show at localhost:3000 instead of localhost:3000/pages/home\par
+-type: \b root 'pages#home'  \b0 in routes.rb\par
+-make another html.erb on sublime text and save it along with home.html.erb in app/views/pages, \par
+\tab about.html.erb\par
+then go in routes and type: \b get 'pages/about'\b0 , the about next to get can change\par
+\b Creating a universal, more convenient way to put Home Page/ About Page:\par
+\b0 <%= link_to "Home", root_path %>\par
+the template is <% link_to "Whatever", whatever_path %>, it'll pull from whatever is said in routes\par
+go to app/views/layouts/application.html.erb and type the above in the body tag above yield, so you can apply it to all pages\par
+\fs16 Adding Updated Stuff onto Github(home and about page)\par
+-go onto command prompt, go in app directory, initialize git, and do:\par
+\b git add -A \b0 and then \b git commit -m "added home and about page"\b0 , then \b git push \b0 to put on github\par
+sometimes, files will be on github but not local, you fix that with:\par
+\tab git push origin master --force\par
+on command prompt\par
+\b\fs28 Using BootStrap for Rails:\b0\par
+(following current tutorial)copy and paste the starter template on the bootstrap website, click Docs, then in #2 of introduction, then onto app/views/layouts/application.html.erb, put the bootstrap scripts inside\par
+-add \b def about \par
+\tab end\b0\par
+function in pages controller\par
+-make a header within app/views/pages and name it _header.html.erb, just type "HEADER GOES HERE </br><br>"\par
+the underline will tell rails to treat it as partial file\par
+-go to app/views/layouts/application and grab that header by typing: \par
+\b <%= render 'pages/header' %> \b0\par
+, in the body section\par
+\b Making Navigation Bar with Bootstrap\par
+\b0 -go to docs and then look for navbar, and copy the code from bootstrap website and onto header file on sublime to get started making a navigation bar,\par
+\b Customizing it:\b0\par
+-change:\par
+\tab\b <a class="navbar-brand" href="#">Navbar</a>\b0 , the Navbar into the name of app, so in my case, RailsApp\par
+-for now, just get rid of disabled, home, and dropdown in navbar\par
+-right below line 1 in header file, type:\par
+\tab\b <%= link_to 'Rails App', root_path, class:"navbar-brand" %>\b0 ,\par
+\tab this \par
+-then right below it:\par
+\tab\b <%= link_to 'About', pages_about_path, class:"navbar-brand" %>\b0\par
+\b Creating Database List:\b0\par
+-type: \b rails g scaffold friends first_name:string last_name:string email:string phone:string twitter:string\par
+\b0 now if you check db/migrate/ it'll show what was created\par
+-type: \b rails db:migrate \b0 ,to migrate the database and now run the server,\par
+\tab note: you'll see a schema now in migration folder\par
+-type in, /friends after localhost:3000,fill in the form and see how it works\par
+in routes: resources: friends handles alll the routes\par
+-now make a friends section in navbar(go to header.html.erb), leading it to \b friends_path \b0 by adding:\par
+\b <%= link_to 'Friends List', friends_path, class:"navbar-brand" %>\par
+\b0 -go to \b app/views/friends/ index.html.erb \b0 and change header to "Friends List"\par
+-\b app/views/friends/new.html \b0 and change header to "Add New Friends"\par
+-type rails routes and find the path for adding 'Add Friend Section':\par
+\tab <%= link_to 'Add a Friend', new_friend_path, class:"navbar-brand" %>\par
+-go to bootstrap, docs, content, tables, and to find a table to use for the friends list by adding in friend.html file\par
+-as for buttons, go to components, button, add the button's class for the link:\par
+\b class:"btn btn-success"\par
+ \b0 in the bottom link within app/views/friends/index.html\par
+-add the buttons on show too\par
+-use \b placeholder:"phone" \b0 for example to show text inside input box by editing in friend/form html, and add \b class:"form-control \b0 for the input field\b\par
+Making Alerts:\par
+\b0\tab create a partial file in layouts of friends folder, name it _alerts.html.erb and paste any alerts from bootstrap(alerts is under component), then type \b <%= notice %> \b0 in there, then type:   \par
+\tab\b <%if notice %>\par
+\tab\tab <%= render 'layouts/alerts' %>\par
+\tab <% end %> \par
+\b0 on the layout applications file,\par
+go to index and show htmls and get rid of that notice to get rid of extra message\par
+\b Creating Login:\b0\par
+add 'Devise' gem from rubygems.org by copy and pasting:\par
+\b gem 'devise', '~> 4.9', '>= 4.9.2'\par
+\b0 click 'documentation' and then 'get started'\par
+-type: \b bundle install , \b0 whole bunch of stuff gonna pop up after a bit\par
+-type \b rails generate devise: install\par
+\b0 then a list of steps of instructions will load:\par
+\tab  1. Ensure you have defined default url options in your environments files. Here is an example of default_url_options appropriate for a development environment in (READ NOTE: so go here >)\b config/environments/development.rb\b0 :\par
+      (READ NOTE: and paste this before \b end\b0 ) \b config.action_mailer.default_url_options = \{ host: 'localhost', port: 3000 \}\par
+\b0      In production, :host should be set to the actual host of your application.\par
+     * Required for all applications. *(READ NOTE: so paste same thing in productions file and the Heroku/Github URL or whatever website you host it on will replace localhost)\par
+(READ NOTE: for steps 2 and 3, we already set our root home page and have flash messages)\par
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.\par
+     For example:\par
+\par
+       root to: "home#index"\par
+\par
+     * Not required for API-only Applications *\par
+\par
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.\par
+     For example:\par
+\par
+       <p class="notice"><%= notice %></p>\par
+       <p class="alert"><%= alert %></p>\par
+\par
+     * Not required for API-only Applications *\par
+\par
+  4. You can copy Devise views (for customization) to your app by running:\par
+\par
+      (READ NOTE: do this for step 4) \b rails g devise:views\b0\par
+\par
+     * Not required *\par
+going back to: {{\field{\*\fldinst{HYPERLINK https://rubydoc.info/github/heartcombo/devise#getting-started }}{\fldrslt{https://rubydoc.info/github/heartcombo/devise#getting-started\ul0\cf0}}}}\f0\fs28 , the next step tells you to run the following to \ul\i keep track of each user\ulnone\i0 :\par
+$ \b rails generate devise MODEL \b0 , just change MODEL to user, so:\par
+\b rails generate devise user\b0\par
+notice: creating database always requires 2 steps: create, then push/migrate , so go ahead and run: \b rails db:migrate\b0\par
+\b Creating Navbar for Login:\par
+          <%= link_to 'friends', friends_path, class:"nav-link" %>\par
+\b0 use this and change it accordingly for "sign in," "sign out," "edit profile," and "sign up" inside header.html (open up rails routes on cmd to see the specific routes for each one)\par
+for sign out, you'd normally have to delete the user session, there's a more specific way you have to do this: since it says destroy_user_session DELETE, you write this:\b\par
+          <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete, class:"nav-link" %>\par
+\b0 need to put in route:  \b devise_scope :user do\par
+    get 'users/sign_out' => "devise/sessions#destroy" \par
+\tab end\par
+\b0 to fix the sign out error\par
+from: {{\field{\*\fldinst{HYPERLINK https://rubydoc.info/github/heartcombo/devise#getting-started }}{\fldrslt{https://rubydoc.info/github/heartcombo/devise#getting-started\ul0\cf0}}}}\f0\fs28  , it'll show us how to verify if the user is signed in or not, which is by pasting:\par
+\tab\b user_signed_in?\par
+\b0\tab since we only want to see "edit profile" and "sign out," we put:\par
+\tab\b <% if user_signed_in? %>\par
+\b0\tab\tab then the navbar links for edit profile and sign out\par
+\tab\b <% else %>\par
+\b0\tab\tab the navbar links for sign in and sign up\par
+-go \b app/views/devise/sessions \b0 and do some bootstrap to make it look better with the following:\par
+add to \b div: class:field form-group\b0\par
+then add\b : class:"form-control", placeholder:"Enter Your Email Here" \b0 , inside\par
+and\b : class:"btn btn-success" \b0 , for the button\par
+-now go to shared/links folders instead of sessions and make the links look a little better by giving it a button class\par
+-can do some more under registrations instead of shared too  \par
+\b Creating Specific Databases for Each User:\par
+-\b0 go to app/models, you will see that there is a users and a friends file, the goal is to associate them for each user\par
+-reading {{\field{\*\fldinst{HYPERLINK https://guides.rubyonrails.org/association_basics.html }}{\fldrslt{https://guides.rubyonrails.org/association_basics.html\ul0\cf0}}}}\f0\fs28  #2, it'll show how to code the association of users and its friends, so type:\par
+\tab\b belongs_to :user \b0 in friend.db from app/models/friend\par
+then:\par
+\tab\b has_many :friends \b0 in user\par
+-now go to cmd and \b rails g migration add_user_id_to_friends user_id:integer:index\b0\par
+index will make it easier to look up certain user, \par
+-now push the migration with \b rails db:migrate\b0\par
+note when you look in \b db/migrate/schema\b0 , you'll see that you added user_id\par
+Now, notice how, from {{\field{\*\fldinst{HYPERLINK https://rubydoc.info/github/heartcombo/devise#getting-started }}{\fldrslt{https://rubydoc.info/github/heartcombo/devise#getting-started\ul0\cf0}}}}\f0\fs28  , you can check current user id with: \b current_user \b0 and you can add that code inside by typing:\par
+\tab\b <% current_user.id %> \par
+\b0 in app/view/friend/form.\b\par
+\b0 notice that you need to delete any user created before associating because this code won't work with a user that doesn't use association\par
+-copy and paste one of the field forms:\par
+\tab\b <div class="form-control form-control-lg">\par
+    \tab\tab <%= form.label :twitter, style: "display: block" %>\par
+    \tab\tab <%= form.text_field :twitter, class:"form-control", \tab\tab\tab placeholder:"Twitter" %>\par
+  \tab </div>\par
+-\b0 replace placeholder with: \b value: current_user.id \b0 and\b  text_field:twitter \b0 to \b number_field:user_id, id: :friend_user_id \b0 just so we can get an integer instead of string/text and add \b type: :hidden \b0 too, get rid of form label above that line\par
+-friends controller won't be able to add new friends since there's a 6th field (which is the user id field), so we fix that by going to \b app/controller/friend \b0 and add to the permit  \b :user_id\par
+-\b0 add a new section for friend list called "User ID" and paste:\par
+\b\tab <td><%= friend.user_id %></td>\par
+\b0 in the friends/friend folder\b\par
+\b0 -however, the new friend is still available to seen by other users and even when you're logged out, so you fix that by going to app/controllers/friend and type:\par
+\tab\b before_action :authenticate_user!, except: [ :index, :show]\par
+-\b0 at this point, we get an error trying to view friends list when logged out\b\par
+\b0 notice that ! means not, so if user is not authenticated, and this line is telling rails to only show friends list, and show each friend individually\par
+__________________________________________________\par
+this didn't work(-however, you can still edit other friends as a different user, you fix that by going in app/view/friend/index and type:\par
+\tab <% if friend.user == current.user %>\par
+\tab\tab the edit, create, destroy friend option\par
+\tab <% end %>)\par
+___________________________________________________\par
+-however now, the problem is that signed users can edit other user's friends list, and we fix that by going to \b app/controller/friends controller \b0 and make a new function under the \b destroy function \b0 with:\par
+\tab\b def correct_user \par
+\tab\tab @friend = current_user.friends.find_by(id: params[:id])\par
+\tab\tab redirect_to friends_path, notice: "Not Authorized To Edit This Friend" if @friend.nil?\par
+\tab end\par
+\b0 and then paste this on the top with the other before_actions:\par
+\tab\b before_action :correct_user, only: [:edit, :update, :destroy]\par
+\b0 and in def new:\par
+\tab\b change @friend = Friend.new \b0 to \b @friend = current_user.friends.build\par
+\b0 then in def create:\par
+\tab don't use the first line (@friend = Friend.new), instead use:\par
+\tab\b @friend = current_user.friends.build(friend_params)\par
+\b0 and that's all that's needed to restrict users to editing their own friends\par
+\b Displaying only friends you made/created:\par
+\b0 go to index.html.erb from app/views/friends and then add:\par
+\tab\b <% if friend.user == current_user %>\b0\par
+\tab\tab <%= render friend %>\par
+\tab blah blah\par
+\tab <% end %>\par
+Changing the Landing Page When Logging In:\par
+-go to routes and change the root to:\par
+\tab\b root 'friends#index'\b0\par
+-now go to app/views/friends/index and type:\par
+\tab\b <% if user_signed_in? %>\par
+\tab\tab\b0 blah blah\par
+\tab\b <% else %>\par
+ \tab\tab  <h1>Pages#home</h1>\par
+  \tab\tab <p>Find me in app/views/pages/home.html.erb</p>\par
+\tab <% end %>\par
+\b0 within index.html\b\par
+-\b0 combine first and last name by going to \b app/views/friends/friend.html\par
+\b0 Creating Links For The Names In Friends List to Just Show That 1 Friend:\par
+go to friend.html.erb and put:\par
+\tab\b <%= link_to friend.first_name + " " + friend.last_name, friend %>\par
+\par
+Adding to Github:\par
+\b0 go to {\b{\field{\*\fldinst{HYPERLINK https://codemy.com/git }}{\fldrslt{https://codemy.com/git\ul0\cf0}}}}\b\f0\fs28   \b0 and 1 by 1 , copy and paste each line in cmd, then:\par
+\tab  \b git add .\par
+\tab git commit -m "reason for adding"\par
+\b0 explaining each file:\par
+\b app/friend/index.html \b0 is the friends lists\par
+\b app/views \b0 will contain all the pages, the layout, and devise(login)\par
+\par
+\b\par
+\par
+\b0\par
+\fs22\par
+}
+ 
