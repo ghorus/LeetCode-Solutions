@@ -1,0 +1,217 @@
+/*both attributes and its properties organized in alphabetical order */
+.accordion {display: none;}
+/*-----------B--------------*/
+body {
+    animation: fadeIn 1s;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+}
+.bkdMtnImg {height: 100vh;object-fit: cover;width: 100vw;}
+/*-----------C--------------*/
+.climbTxt{
+    font-size: 50px;
+    margin-top: 50px;
+    margin-left: -20px;
+    color:rgb(72, 114, 151);
+}
+/*-----------D--------------*/
+.dots {
+    position:absolute;
+    top:0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+/*-----------F--------------*/
+.fadeAnim {animation:fadeIn 1s;}
+.footer {
+    display:flex;
+    width: 100vw;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(19, 72, 85);
+    color:rgb(182, 182, 182);
+}
+.footerLinks {width:400px;}
+.footerlogoTxt {display: flex;flex-direction: column;line-height: 30px;
+}
+.footerlogoTxt p {margin: 0px;font-size: 30px;}
+/*-----------G--------------*/
+.galleryImg {height:180px;margin:0px 30px;}
+.galleryImg:hover {opacity: 0.6;}
+.galleryImgs {
+    position: absolute;
+    bottom: 0px;
+    z-index: 0;
+    width: 100vw;
+    height:250px;
+}
+.galleryImgs::before {
+    content:"\A0";
+    background-color: rgb(255, 255, 255,0.3);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 250px;
+    position:absolute;
+    z-index: -1;
+}
+/*-----------H--------------*/
+.histContent {font-size:17px;font-family: Arial;}
+.historyPage {position:relative;overflow: hidden;}
+.histText {
+    position: absolute;
+    top:10%;
+    left:10%;
+    width: 70%;
+    opacity:0;
+    transform: translateX(-100px);
+    transition:1.2s ease-in-out
+}
+.histTitle {font-size:50px;margin-top: 50px;margin-left: -20px;color:rgb(213, 235, 255);}
+/*-----------I--------------*/
+.imgContainer {display: flex;justify-content: center;align-items: center;height: 100%;}
+/*-----------L--------------*/
+.landingPage {
+    background-size: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 100px;
+    font-size: 80px;
+    position: relative;
+}
+.laTxt {color:rgb(48, 48, 48)}
+.links {
+    animation: comeInFromRight 1s;
+    background-color: rgba(0, 34, 78, 0.7);
+    border-radius: 3px;
+    color:white;
+    display: grid;
+    font-size: 25px;
+    font-style: italic;
+    grid-template-columns: 150px 150px;
+    margin-right:5%;
+    padding:5px;
+    text-align: center;
+    width: 300px;
+}
+.links a {position: relative;}
+.links a:hover {text-decoration: underline;}
+.logo {width:80px;height: 100%;animation: comeInFromLeft 1s;}
+.logoContainer{align-items: center;display: flex;}
+.logoTxt {display: flex;flex-direction: column;line-height: 30px;visibility: hidden;}
+.logoTxt p {margin: 0px;font-size: 30px;}
+/*-----------M--------------*/
+.mountainsNav {background-color: rgb(42, 99, 146);display: flex;height:60px;width: 100vw;}
+.mountainsNav div{
+    align-items: center;
+    color:rgb(241, 241, 241);
+    display: grid;
+    font-size: 30px;
+    height:60px;
+    justify-content: center;
+    padding-left: 10%;
+    width: 230px;
+}
+.mountainsNav div:hover {background-color: rgb(241, 241, 241);color:rgb(42, 99, 146);text-decoration:underline;}
+.mountainsNav div:active {font-size:25px;}
+.mtnTxt {color: rgb(21, 21, 117);}
+/*-----------N--------------*/
+.navig {
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    position:fixed;
+    top:0px;
+    transition: 0.4s;
+    width: 100vw;
+    z-index: 1;
+}
+.num {color: rgb(149, 204, 253);font-size: 112px;font-weight: bolder;}
+/*-----------S--------------*/
+.schedule {left:15%;position:absolute;top:20px;z-index: 0;}
+.schedule::before {
+    content:"\A0";
+    background-color: rgba(245, 245, 245, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    z-index: -1;
+    border-radius: 3px;
+}
+.schedTitle {font-size: 39px;}
+.secMtn {height: 100vh;object-fit: cover;width: 100vw;}
+.secTitle{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    opacity:0;
+    transform:translateX(-100px);
+    transition: 1.3s ease-in-out;
+}
+.secTitleTxt{display: flex;}
+.show {opacity:1;transform: translateX(0px);}
+.showTxt {visibility: visible;}
+svg {margin: 5px 20px;}
+/*-----------T--------------*/
+table {font-size: 20px;font-family: Arial;height: 400px;padding-left: 10%;}
+td {padding: 6px;width:300px;}
+.thirdSec{position:relative;}
+.thirdMtnImg{height:80vh;object-fit: cover;width: 100vw;}
+.titlePara {font-family: Arial;margin:0px 5%;width:600px;}
+.titleText {display: flex;}
+.two {color:rgb(126, 130, 134);font-size:112px;font-weight: bolder;}
+.txtContainer {position: absolute;}
+.txtContainer p {font-size: 120px;margin: 0px;}
+/*-----------W--------------*/
+.white{background-color: white;color:black;}
+@keyframes comeInFromRight {
+    from {transform:translate(100px)}
+    to {transform: translate(0px);}
+}
+@keyframes comeInFromLeft {
+    from {transform:translate(-100px)}
+    to {transform: translate(0px);}
+}
+@keyframes fadeIn {
+    from {opacity:0.3;}
+    to {opacity:1;}
+}
+@media screen and (max-width: 575px) {
+    .accordion{display: block;}
+    .footerLinks{text-align:center;font-size: 10px;width:200px}
+    .footerlogoTxt p {font-size: 12px;}
+    .galleryImg {height:70px;margin:0px 10px;}
+    .galleryImgs::before,.galleryImgs {height:150px}
+    .histContent {font-size: 14px;}
+    .links {
+        display: grid;
+        grid-template-rows: 50px;
+        grid-template-columns: 50px;
+        margin-right:5%;
+        width: 50px;
+        font-size: 15px;
+        align-items: center;
+    }
+    .menuItems {display: none;}
+    .mountainsNav div {font-size: 20px;padding-left: 1%;width:180px;}
+    .schedule {left:2%;}
+    table {font-size: 15px;font-family: Arial;height: 300px;}
+    td {width:110px;padding: 6px;}
+    .titlePara {font-size: 12px;}
+    .txtContainer p {font-size: 70px;}
+}
+@media screen and (min-width: 575px) and (max-width:770px){
+    .footerLinks{font-size: 15px;width:300px}
+    .galleryImg {height:100px;margin:0px 25px;}
+    .galleryImgs::before,.galleryImgs {height:200px}
+    table {font-size: 18px;font-family: Arial;height: 350px;}
+    td {width:200px;padding: 6px;}
+}

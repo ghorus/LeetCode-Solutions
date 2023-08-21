@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index.css" rel="stylesheet">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <title>Los Angeles Mountains</title>
+</head>
+<body>
+    <nav class="navig">
+        <div class="logoContainer"><img class="logo" src="logo.png"><div class="logoTxt"><p>LOS ANGELES</p><p>MOUNTAINS</p></div></div>
+       
+        <div class="links"><a class="accordion" onclick="showMenu()">=</a><a onclick="snapToHistory()" class="menuItems">01.  HISTORY</a><a class="menuItems">02. TEAM</a></div>
+    </nav>
+    <div class="landingPage">
+        <img class="bkdMtnImg" src="mountains4k.jpg">
+        <div class="txtContainer">
+            <p class="laTxt">LOS ANGELES</p>
+            <p class="mtnTxt">MOUNTAINS</p>
+        </div>
+    </div>
+    <div class="historyPage">
+        <img class="secMtn" src="mtn2.jpg">
+        <div class="histText">
+            <header class="titleText">
+                <span class="num">01.</span>
+                <span class="histTitle">HISTORY</span>
+            </header>
+            <p class="histContent">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="galleryImgs">
+            <div class="imgContainer">
+                <img  id="1" class="galleryImg" src="mtnGallery1.jpg">
+                <img  id="2" class="galleryImg" src="mtnGallery2.jpg">
+                <img  id="3" class="galleryImg" src="mtnGallery1.jpg">
+                <img  id="4" class="galleryImg" src="mtnGallery2.jpg">
+            </div>
+            <div class="dots">
+                <svg height="16" width="16">
+                <circle id="1" cx="8" cy="8" r="8" fill="white" />
+                </svg>
+                <svg height="16" width="16">
+                    <circle id="2" cx="8" cy="8" r="8" fill="white" />
+                    </svg>
+                <svg height="16" width="16">
+                    <circle id="3" cx="8" cy="8" r="8" fill="white" />
+                    </svg>
+                <svg height="16" width="16">
+                    <circle id="4" cx="8" cy="8" r="8" fill="white" />
+                    </svg>
+        </div>
+        </div>
+    </div>
+    <div class="secTitle">
+        <header class="secTitleTxt">
+            <span class="two">02.</span>
+            <span class="climbTxt">CLIMB</span>
+        </header>
+        <section class="titlePara">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident.</section>
+    </div>
+    <div class="mountainsNav">
+        <div>MOUNTAIN 1</div>
+        <div>MOUNTAIN 2</div>
+    </div>
+    <div class="thirdSec">
+        <img src="mtnGallery3.jpg" class="thirdMtnImg">
+        <div class="schedule">
+            <table>
+                <th class="schedTitle">SCHEDULE</th>
+                <tr>
+                  <td>25 Nov 2016</td>
+                  <td>Vestibulum Veberra</td>
+                </tr>
+                <tr>
+                  <td>28 Nov 2016</td>
+                  <td>Vestibulum Veberra</td>
+                </tr>
+                <tr>
+                  <td>February</td>
+                  <td>Vestibulum Veberra</td>
+                </tr>
+                <tr>
+                    <td>February</td>
+                    <td>Vestibulum Veberra</td>
+                </tr>
+              </table>
+        </div>
+    </div>
+    <footer class="footer" style="margin:-5px;">
+        <div class="logoContainer"><img class="logo" src="logo.png"><div class="footerlogoTxt"><p>LOS ANGELES</p><p>MOUNTAINS</p></div></div>
+       
+        <div class="footerLinks"><a>COPYRIGHT 2014. ALL RIGHTS RESERVED.</a></div>
+    </footer>
+    <script src="index.js" defer></script>
+</body>
+</html>
